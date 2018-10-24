@@ -11,10 +11,10 @@ class HashTable {
     _hash(key) {
       let total = 0;
       for (let i = 0; i < Math.min(key.length, this.maxKeyLength); i++) {
-        let char = key[i];
-        let value = char.charCodeAt(0) - 96;
-        total = (total * this.weirdPrime + value) % this.keyMap.length;
+        let value = key[i].charCodeAt(0);
+        total = (total * this.weirdPrime + value)
       }
+      total = total % this.keyMap.length;
       return total;
     }
 
