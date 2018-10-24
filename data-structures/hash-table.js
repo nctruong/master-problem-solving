@@ -90,16 +90,30 @@ class HashTable {
   console.log("keyMap: ", ht.keyMap);
   console.log("values: ", ht.values());
 
-//   keyMap:  [ [ [ 'plum', '#DDA0DD' ] ],
-//   <2 empty items>,
-//   [ [ 'salmon', '#FA8072' ] ],
-//   [ [ 'violet', '#DDA0DD' ] ],
-//   <2 empty items>,
-//   [ [ 'purple', '#DDA0DD' ] ],
-//   [ [ 'maroon', '#800000' ], [ 'yellow', '#FFFF00' ] ],
-//   <1 empty item>,
-//   [ [ 'olive', '#808000' ] ],
-//   <2 empty items>,
-//   [ [ 'lightcoral', '#F08080' ] ],
-//   <2 empty items>,
-//   [ [ 'mediumvioletred', '#C71585' ] ] ]
+  // #808000
+  // #DDA0DD
+  // #FA8072
+  // #DDA0DD
+  // #C71585
+  // #DDA0DD
+  // #800000
+  // #FFFF00
+  // #F08080
+  // keyMap:  [ <1 empty item>,
+  //   [ [ 'olive', '#808000' ], [ 'plum', '#DDA0DD' ] ],
+  //   <5 empty items>,
+  //   [ [ 'salmon', '#FA8072' ] ],
+  //   [ [ 'violet', '#DDA0DD' ] ],
+  //   <2 empty items>,
+  //   [ [ 'mediumvioletred', '#C71585' ], [ 'purple', '#DDA0DD' ] ],
+  //   [ [ 'maroon', '#800000' ], [ 'yellow', '#FFFF00' ] ],
+  //   <2 empty items>,
+  //   [ [ 'lightcoral', '#F08080' ] ],
+  //   <1 empty item> ]
+  // values:  [ '#808000',
+  //   '#DDA0DD',
+  //   '#FA8072',
+  //   '#C71585',
+  //   '#800000',
+  //   '#FFFF00',
+  //   '#F08080' ]
