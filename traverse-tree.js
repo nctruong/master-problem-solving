@@ -73,6 +73,7 @@ class TraverseTree {
             }
             // going right if left node not exists or it visited and right node exists
             if ((node.right !== null) && 
+                (this.nodes_visited[node.right.value] === undefined) &&
                 ((node.left === null) || (this.nodes_visited[node.left.value] === true))) {
                     stack.enqueue(node.right);
                     this.result.push(node.right.value);
@@ -80,7 +81,7 @@ class TraverseTree {
             // track back if this is leaf
             if ((node.left === null) && (node.right === null)) {
                 // not enqueue so it track back
-                console.log("this is leaf");
+                console.log(`this is leaf: ${node.value}`);
             }
 
         }
