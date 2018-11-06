@@ -65,27 +65,39 @@ class TraverseTree {
                 this.nodes_visited[node.value] = true;
             }
             // going left if left node exists and not visited yet
-            if ((node.left !== null) && (this.nodes_visited[node.left.value] === undefined)) {
+            if (this._left_not_visited_yet(node)) {
                     // enqueue for next inspection
                     stack.enqueue(node.left);
                     // add to result
                     this.result.push(node.left.value);
             }
             // going right if left node not exists or it visited and right node exists
-            if ((node.right !== null) && 
-                (this.nodes_visited[node.right.value] === undefined) &&
-                ((node.left === null) || (this.nodes_visited[node.left.value] === true))) {
+            if (this._right_not_visited_yet(node)) {
                     stack.enqueue(node.right);
                     this.result.push(node.right.value);
             }
             // track back if this is leaf
-            if ((node.left === null) && (node.right === null)) {
+            if (this._is_leaf(node)) {
                 // not enqueue so it track back
                 console.log(`this is leaf: ${node.value}`);
             }
 
         }
         return this.result;
+    }
+
+    _left_not_visited_yet(node){
+        return (node.left !== null) && (this.nodes_visited[node.left.value] === undefined);
+    }
+
+    _right_not_visited_yet(node){
+        return ((node.right !== null) && 
+                    (this.nodes_visited[node.right.value] === undefined) &&
+                        ((node.left === null) || (this.nodes_visited[node.left.value] === true)));
+    }
+
+    _is_leaf(node){
+        return (node.left === null) && (node.right === null);
     }
 }
 // initialize nodes
