@@ -50,14 +50,12 @@ class TraverseTree {
         stack.enqueue(this.root_node);
         this.result.push(this.root_node.value);
         while(!stack.isEmpty()) {
-            console.log("while -------------------------------------------------");
-            console.log(stack.stringify());
-            console.log(`visited: ${JSON.stringify(this.nodes_visited)}`);
+            console.log(`\n---visited: ${JSON.stringify(this.nodes_visited)}`);
             // dequeue a element, if:
             // - enqueue one more element => next time will traverse on new node (dequeue).
             // - not enqueue any element => next time will track back the old node.
             let node = stack.last();
-            console.log(`inspecting ${node.value}`)
+            console.log(`------inspecting ${node.value}`)
             
             if (this.nodes_visited[node.value] === true) {
                 stack.dequeue();
@@ -79,7 +77,7 @@ class TraverseTree {
             // track back if this is leaf
             if (this._is_leaf(node)) {
                 // not enqueue so it track back
-                console.log(`this is leaf: ${node.value}`);
+                console.log(`------this is leaf: ${node.value}`);
             }
 
         }
